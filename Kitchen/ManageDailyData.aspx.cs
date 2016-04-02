@@ -17,6 +17,8 @@ namespace Kitchen
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            ClientScript.RegisterStartupScript(this.GetType(), "users", String.Format("javascript:ManageDailyData.getTableData();"), true);
+            ClientScript.RegisterStartupScript(this.GetType(), "appand", String.Format("javascript:ManageDailyData.getButtons();"), true);
         }
     }
 }
