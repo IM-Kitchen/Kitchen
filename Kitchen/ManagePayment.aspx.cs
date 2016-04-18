@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml.Linq;
-namespace Kitchen
-{
-    public partial class ManagePayment : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+using System.Web.Services;
 
-        }
+public partial class ManagePayment : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //  ClientScript.RegisterStartupScript(this.GetType(), "search", String.Format("javascript:DisplayTable.search();"), true);
+    }
+
+    [WebMethod]
+    public static string GetUserPayments()
+    {
+        return "[{'name':'Naira','lastname':'Poghosyan', 'payment': '5000'}, {'name':'Marine','lastname':'Grigoryan', 'payment': '5000'}, {'name':'Tamara','lastname':'Avagyan', 'payment': '5000'}]";
     }
 }
+
+ 
